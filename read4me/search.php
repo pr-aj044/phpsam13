@@ -1,8 +1,28 @@
 <?php
+if(isset($_GET["hvuser"])){
+    
+    $user=$_GET["hvuser"];
+    
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+    $serv="localhost";
+    $dbname="read4me";
+    $usname="root";
+    $pswda="";
+    $con=new mysqli($serv,$usname,$pswda,$dbname);
+    $r=array();
+    
+    $sql="DELETE FROM `user_data` WHERE `mail`='$user' AND `passwd`='$pswd' ";
+    $resulr=$con->query($sql);
+ 
+    if($resulr===TRUE){
+    $r['status']="success";
+    
+    }
+    else
+    {
+    $r['status']="failed";
+    
+    }
+    echo json_encode($r);
+    }
+    

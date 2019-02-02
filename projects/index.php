@@ -1,22 +1,19 @@
 
 <?php
 
-if(isset($_GET['name']))
+if(isset($_POST['name']))
 {
-    $x=$_GET['name'];
-    $y=$_GET['adres'];
-    $m=$_GET['mob'];
-    $e=$_GET['email'];
-    $un=$_GET['uname'];
-    $ps=$_GET['pswd'];
-    
+    $x=$_POST['name'];
+    $y=$_POST['course'];
+    $m=$_POST['phone'];
+
 $serv="localhost";
 $dbname="sample";
 $uname="root";
 $pswda="";
 $con=new mysqli($serv,$uname,$pswda,$dbname);
 $r=array();
-$sql="INSERT INTO `details`(`name`, `address`, `mobile`, `email`, `username`, `password`) VALUES ('$x','$y',$m,'$e','$un','$ps')";
+$sql="INSERT INTO `test`(`name`, `course`, `phone`) VALUES ('$x','$y',$m)";
     $resulr=$con->query($sql);
     
 if($resulr===TRUE){

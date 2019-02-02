@@ -1,22 +1,22 @@
 <?php
 
-if(isset($_GET["fname"])){
-    $fname=$_GET["fname"];
-    $lname=$_GET["lname"];
-    $age=$_GET["uage"];
-    $gen=$_GET["gender"];
-    $mob=$_GET["mobile"];
-    $mail=$_GET["email"];
-    $paswd=$_GET["pass"];
+if(isset($_POST["fname"])){
+    $fname=$_POST["fname"];
+    $lname=$_POST["lname"];
+    $age=$_POST["uage"];
+    $gen=$_POST["gender"];
+    $mob=$_POST["mobile"];
+    $mail=$_POST["email"];
+    $paswd=$_POST["pass"];
     
     $serv="localhost";
-    $dbname="user_data";
+    $dbname="read4me";
     $usname="root";
     $pswda="";
     $con=new mysqli($serv,$usname,$pswda,$dbname);
     $r=array();
     
-    $sql="INSERT INTO `user_data`(`f_name`, `l_name`, `age`, `gender`, `mobile`, `mail`, `passwd`) VALUES ('$fname','$lname',$age,'$gen',$mob,'$mail','$paswd')";
+    $sql="INSERT INTO `user_data`(`f_name`, `l_name`, `age`, `gender`, `mobile`, `mail`, `passwd`) VALUES ('$fname','$lname','$age','$gen','$mob','$mail','$paswd')";
     $resulr=$con->query($sql);
     
     if($resulr===TRUE){

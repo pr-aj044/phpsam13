@@ -10,7 +10,7 @@ if(isset($_GET["fname"])){
    
     
     $serv="localhost";
-    $dbname="user_data";
+    $dbname="read4me";
     $usname="root";
     $pswda="";
     $con=new mysqli($serv,$usname,$pswda,$dbname);
